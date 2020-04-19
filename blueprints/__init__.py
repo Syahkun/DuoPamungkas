@@ -58,9 +58,11 @@ from blueprints.user.resources import bp_user
 from blueprints.client.resources import bp_client
 from blueprints.auth import bp_auth
 from blueprints.bmi.resources import bp_bmi
+from blueprints.resep.resources import bp_resep
 
 app.register_blueprint(bp_user, url_prefix='/user')
 app.register_blueprint(bp_client, url_prefix='/client')
 app.register_blueprint(bp_auth, url_prefix='/auth')
 app.register_blueprint(bp_bmi, url_prefix='/bmi')
+app.register_blueprint(bp_resep, url_prefix='/resep')
 db.create_all()
