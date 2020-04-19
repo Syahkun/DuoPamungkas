@@ -488,3 +488,218 @@ AttributeError: 'NoneType' object has no attribute 'salt'
 [2020-04-19 07:38:54,601]{/home/alta12/Videos/restorePI/project/blueprints/__init__.py:55} ERROR - 
 [2020-04-19 07:41:49,882]{/home/alta12/Videos/restorePI/project/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {}, "response": {"id": 3, "client_key": "internal", "client_secret": "ffe5efa806c3c246a8a899a9f47cc2e49215eaede44875ef3344e6a5b027bc01c9f4e6c811b66a9268d1086a3d7a9684f65c6dacf4568ce1b1903a159cf3d5be", "status": "True"}}
 [2020-04-19 07:42:18,473]{/home/alta12/Videos/restorePI/project/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"client_key": "internal", "client_secret": "th1s1s1s1nt3n4lclI3nt"}, "response": {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODcyOTY1MzgsIm5iZiI6MTU4NzI5NjUzOCwianRpIjoiMGFhNWRhZmItYzljYi00YzNmLWEwMGEtNDczMGNmZGM5MmRiIiwiZXhwIjoxNTg3MzgyOTM4LCJpZGVudGl0eSI6ImludGVybmFsIiwiZnJlc2giOmZhbHNlLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9jbGFpbXMiOnsiY2xpZW50X2tleSI6ImludGVybmFsIiwic3RhdHVzIjoiRmFsc2UiLCJpZGVudGlmaWVyIjoiYWx0YWJhdGNoNSJ9fQ.t7NAeLS23EEjED1qmCZC9Ocd9Q4aNf4LDG0BFh8-N64"}}
+[2020-04-19 20:07:54,930]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /auth [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/auth/__init__.py", line 23, in get
+    client_salt = qry.salt
+AttributeError: 'NoneType' object has no attribute 'salt'
+[2020-04-19 20:07:54,932]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:08:41,306]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {}, "response": []}
+[2020-04-19 20:12:18,723]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {}, "response": {"id": 1, "client_key": "asa", "client_secret": "2b5481c6583d49916f172810d1a688d741bf53c2869ea5537a1c1bc573e915503f10457238c19322cb96f2c8c7bb88cdf63572a851ccd4b3e0bd0b889310e14f", "status": "False"}}
+[2020-04-19 20:12:44,719]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {}, "response": {"id": 2, "client_key": "internal", "client_secret": "23ceb843e0cf25ed41e8484f3498ca41788c8594b1274e114d85b7e0b2988cb6ea493b3876391cf87e86b64401d93464099e36cb12d516a3ff635fa50cd14cde", "status": "True"}}
+[2020-04-19 20:13:15,298]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {}, "response": []}
+[2020-04-19 20:14:29,507]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {}, "response": {"id": 1, "client_id": 1, "name": "asa", "age": 19, "sex": "Male"}}
+[2020-04-19 20:15:21,115]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"client_key": "asa", "client_secret": "alta123"}, "response": {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1ODczMDIxMjEsIm5iZiI6MTU4NzMwMjEyMSwianRpIjoiZThiZjcwMTUtMzlhYy00MTNiLTk2YTgtNjFlNjA1ZTI4NTk3IiwiZXhwIjoxNTg3Mzg4NTIxLCJpZGVudGl0eSI6ImFzYSIsImZyZXNoIjpmYWxzZSwidHlwZSI6ImFjY2VzcyIsInVzZXJfY2xhaW1zIjp7ImNsaWVudF9rZXkiOiJhc2EiLCJzdGF0dXMiOiJGYWxzZSIsImlkZW50aWZpZXIiOiJhbHRhYmF0Y2g1In19.vbdHOBRCrOSIWRzGj4CNCElN5pkAF8nqugHoA8WwwGs"}}
+[2020-04-19 20:18:47,564]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /bmi [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/bmi/resources.py", line 37, in get
+    response = requests.request('GET', headers['x-rapidapi-host'] + '/bmi', headers=headers, params=querystring)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/sessions.py", line 459, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'gabamnml-health-v1.p.rapidapi.com/bmi': No schema supplied. Perhaps you meant http://gabamnml-health-v1.p.rapidapi.com/bmi?
+[2020-04-19 20:18:47,570]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:19:12,968]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /bmi [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/bmi/resources.py", line 37, in get
+    response = requests.request('GET', headers['x-rapidapi-host'] + '/bmi', headers=headers, params=querystring)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/sessions.py", line 459, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'gabamnml-health-v1.p.rapidapi.com/bmi': No schema supplied. Perhaps you meant http://gabamnml-health-v1.p.rapidapi.com/bmi?
+[2020-04-19 20:19:12,969]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:22:09,102]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /bmi [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/bmi/resources.py", line 38, in get
+    status = response.json()['status']
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/models.py", line 898, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2020-04-19 20:22:09,104]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:24:47,923]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /bmi [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/bmi/resources.py", line 38, in get
+    status = response.json()['status']
+TypeError: 'int' object is not subscriptable
+[2020-04-19 20:24:47,925]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:26:44,869]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"weight": "80", "height": "165", "umur": "23", "gender": "M"}, "response": "504"}
+[2020-04-19 20:36:55,906]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /bmi [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/bmi/resources.py", line 38, in get
+    status_health = response.json()['status']
+TypeError: 'int' object is not subscriptable
+[2020-04-19 20:36:55,911]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:39:22,969]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /bmi [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/bmi/resources.py", line 38, in get
+    status_health = response.json()['status']
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/requests/models.py", line 898, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.6/json/__init__.py", line 354, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.6/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.6/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+[2020-04-19 20:39:22,973]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:42:47,450]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"weight": "80", "height": "165", "umur": "23", "gender": "M"}, "response": "Low"}
+[2020-04-19 20:43:12,025]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"weight": "80", "height": "165", "umur": "23", "gender": "M"}, "response": "{\n  \"status\": \"Low\",\n  \"result\": 2.0657483930211202,\n  \"ideal_weight\": {\n    \"woman\": 155,\n    \"man\": 165\n  }\n}"}
+[2020-04-19 20:43:31,855]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /bmi [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 472, in wrapper
+    return self.make_response(data, code, headers=headers)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 501, in make_response
+    resp = self.representations[mediatype](data, *args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/representations/json.py", line 21, in output_json
+    dumped = dumps(data, **settings) + "\n"
+  File "/usr/lib/python3.6/json/__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "/usr/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/usr/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/usr/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'Response' is not JSON serializable
+[2020-04-19 20:43:31,860]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:43:51,378]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"weight": "80", "height": "165", "umur": "23", "gender": "M"}, "response": {"status": "Low", "result": 2.0657483930211202, "ideal_weight": {"woman": 155, "man": 165}}}
+[2020-04-19 20:49:12,070]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:51:33,696]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"weight": "80", "height": "165", "umur": "23", "gender": "M"}, "response": {"weight": "80", "height": "165", "umur": "23", "gender": "M", "status_health": "Low"}}
+[2020-04-19 20:57:24,521]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /resep [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/resep/resources.py", line 29, in get
+    if status == "Overweight":
+NameError: name 'status' is not defined
+[2020-04-19 20:57:24,523]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:58:01,798]{/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /resep [GET]
+Traceback (most recent call last):
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask/views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "/home/alta14/VirtualEnv/projectapi/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/home/alta14/Documents/Project Api/blueprints/resep/resources.py", line 45, in get
+    response = requests.request('GET', 'https://' + headers['x-rapidapi-host_2'] + '/recipes/mealplans/generate', headers=headers, params=querystring)
+KeyError: 'x-rapidapi-host_2'
+[2020-04-19 20:58:01,802]{/home/alta14/Documents/Project Api/blueprints/__init__.py:55} ERROR - 
+[2020-04-19 20:58:21,767]{/home/alta14/Documents/Project Api/blueprints/__init__.py:51} WARNING - REQUEST_LOG	{"request": {"weight": "80", "height": "160", "umur": "23", "gender": "M"}, "response": {"meals": [{"id": 625122, "title": "Breakfast Burger", "readyInMinutes": 25, "servings": 8, "image": "Breakfast-Burger-625122.jpg", "imageUrls": ["Breakfast-Burger-625122.jpg"]}, {"id": 636593, "title": "Butternut Squash Pizza", "readyInMinutes": 45, "servings": 4, "image": "Butternut-Squash-Pizza-636593.jpg", "imageUrls": ["Butternut-Squash-Pizza-636593.jpg"]}, {"id": 655447, "title": "Pear, Goat Cheese and Spinach Salad with Warm Maple-Bacon Dressing", "readyInMinutes": 45, "servings": 2, "image": "Pear--Goat-Cheese-and-Spinach-Salad-with-Warm-Maple-Bacon-Dressing-655447.jpg", "imageUrls": ["Pear--Goat-Cheese-and-Spinach-Salad-with-Warm-Maple-Bacon-Dressing-655447.jpg"]}], "nutrients": {"calories": 2745.96, "protein": 117.51, "fat": 158.4, "carbohydrates": 214.16}}}
