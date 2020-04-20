@@ -12,18 +12,17 @@ api = Api(bp_user)
 
 class UserResource(Resource):
     
-    # @internal_required
     def __init__(self):
         pass
     
-    # @internal_required
+    @internal_required
     def get(self, id):
         qry = Users.query.get(id)
         if qry is not None:
             return marshal(qry, Users.response_fields), 200
         return {'status': 'NOT_FOUND'}, 404
     
-    # @internal_required
+    @internal_required
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('client_id', location='json')
@@ -40,7 +39,7 @@ class UserResource(Resource):
 
         return marshal(user, Users.response_fields), 200, {'Content-Type': 'application/json'}
     
-    # @internal_required
+    @internal_required
     def put(self, id):
         parser = reqparse.RequestParser()
         parser.add_argument('name', location='json', required=True)
@@ -59,7 +58,7 @@ class UserResource(Resource):
         
         return marshal(qry, Users.response_fields), 200, {'Content-Type': 'application/json'}
     
-    # @internal_required
+    @internal_required
     def delete(self, id):
         qry = Users.query.get(id)
         if qry is None:
@@ -72,11 +71,10 @@ class UserResource(Resource):
 
 class UserList(Resource):
     
-    # @internal_required
     def __init__(self):
         pass
     
-    # @internal_required
+    @internal_required
     def get(self):
         parser = reqparse.RequestParser()
         parser.add_argument('p', type=int, location='args', default=1)

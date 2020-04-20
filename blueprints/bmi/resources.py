@@ -14,7 +14,7 @@ api = Api(bp_bmi)
 
 class GetBmi(Resource):
     
-    # @jwt_required
+    @internal_required
     def get(self):
         parser = reqparse.RequestParser()
         parser.add_argument('weight', location='args', default=None)

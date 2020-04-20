@@ -39,10 +39,10 @@ class CreateTokenResource(Resource):
         else:
             return {'status': 'UNAUTHORIZED', 'message': 'invalid key or secret'}, 404
     
-    # @internal_required
+    @internal_required
     def post(self):
         claims = get_jwt_claims()
-        return {'clamis': claims},200
+        return {'claims': claims},200
     
 class RefreshTokenResource(Resource):
     
