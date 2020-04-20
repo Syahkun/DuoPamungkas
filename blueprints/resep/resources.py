@@ -2,7 +2,7 @@ import requests
 from flask import Blueprint
 from flask_restful import Api, reqparse, Resource
 import json
-from blueprints import app
+from blueprints import app, internal_required
 from blueprints.bmi.resources import GetBmi
 
 import configparser
@@ -15,7 +15,7 @@ api = Api(bp_resep)
 
 class GetResep(Resource):
     
-    # @jwt_required
+    @internal_required
     def get(self):
         GetBmi()
 
