@@ -35,8 +35,12 @@ def init_database():
     db.session.commit()
 
     user = Users(name="andre", age=23, sex="Female", weight= 97, height=167, food='olives')
+    user1 = Users(name="andrey", age=50, sex="Male", weight= 200, height=100, food='olives')
+    user2 = Users(name="andreyi", age=23, sex="Male", weight= 60, height=165, food='olives')
 
     db.session.add(user)
+    db.session.add(user1)
+    db.session.add(user2)
     db.session.commit()
 
     yield db

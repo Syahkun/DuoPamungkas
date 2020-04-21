@@ -46,10 +46,6 @@ class GetResep(Resource):
                 }
 
             response = requests.request('GET', 'https://' + headers['x-rapidapi-host'] + '/recipes/mealplans/generate', headers=headers, params=querystring)
-            
-            return response.json()
-
-        return {'status': 'NOT_FOUND'}, 404
-        
+            return response.json()        
 
 api.add_resource(GetResep, '/<id>')
