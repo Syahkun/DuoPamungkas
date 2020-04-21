@@ -1,79 +1,87 @@
-[2020-04-17 23:58:27,731]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /rent/1 [GET]
+[2020-04-18 00:05:50,985]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:60} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/rent/2?", "request": {"user_id": 1, "book_id": 1}, "response": {"id": 2, "book_id": 1, "user_id": "1", "return_date": "Sat, 18 Apr 2020 00:00:10 -0000", "created_at": "Sat, 18 Apr 2020 00:00:10 -0000", "updated_at": null, "deleted_at": null}}
+[2020-04-18 00:05:53,653]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "404 NOT FOUND", "uri": "/rent/3?", "request": {"user_id": 1, "book_id": 1}, "response": {"status": "NOT_FOUND"}}
+[2020-04-18 00:05:57,586]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:60} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/rent/?", "request": {"user_id": 1, "book_id": 1}, "response": [{"id": 1, "book_id": 6, "user_id": "8", "return_date": "Fri, 17 Apr 2020 23:27:39 -0000", "created_at": "Fri, 17 Apr 2020 23:27:39 -0000", "updated_at": null, "deleted_at": null, "user": {"created_at": "Fri, 17 Apr 2020 23:18:02 -0000", "updated_at": null, "deleted_at": null, "id": 8, "name": "aleandro", "age": 29, "sex": "male", "client_id": 8}, "book": {"created_at": "Fri, 17 Apr 2020 23:19:32 -0000", "updated_at": null, "deleted_at": null, "id": 6, "title": "hello", "isbn": "48123091", "writer": "me"}}, {"id": 2, "book_id": 1, "user_id": "1", "return_date": "Sat, 18 Apr 2020 00:00:10 -0000", "created_at": "Sat, 18 Apr 2020 00:00:10 -0000", "updated_at": null, "deleted_at": null, "user": {"created_at": "Thu, 16 Apr 2020 20:49:23 -0000", "updated_at": null, "deleted_at": null, "id": 1, "name": "Marshall", "age": 25, "sex": "male", "client_id": 0}, "book": {"created_at": "Thu, 16 Apr 2020 21:00:44 -0000", "updated_at": null, "deleted_at": null, "id": 1, "title": "To kill a mockingbird", "isbn": "123213", "writer": "eliott"}}]}
+[2020-04-18 00:25:14,742]{/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /rent [GET]
 Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/rent/resources.py", line 27, in get
-    return marshal(qry, Rents.response_field), 200
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 636, in marshal
-    return OrderedDict([(envelope, OrderedDict(items))]) if envelope else OrderedDict(items)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 635, in <genexpr>
-    for k, v in fields.items())
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 636, in marshal
-    return OrderedDict([(envelope, OrderedDict(items))]) if envelope else OrderedDict(items)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 635, in <genexpr>
-    for k, v in fields.items())
-AttributeError: 'NoneType' object has no attribute 'output'
-[2020-04-17 23:58:27,735]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/rent/1?", "request": {"user_id": 8, "book_id": 6}, "response": {"message": "Internal Server Error"}}
-[2020-04-17 23:58:57,909]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /rent/1 [POST]
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.InternalError: (1054, "Unknown column 'rent.created_at' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
     rv = self.dispatch_request()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
     resp = resource(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
     return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-TypeError: post() got an unexpected keyword argument 'id'
-[2020-04-17 23:58:57,910]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/rent/1?", "request": {"user_id": 1, "book_id": 1}, "response": {"message": "Internal Server Error"}}
-[2020-04-18 00:00:05,627]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /rent/1 [POST]
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-TypeError: post() got an unexpected keyword argument 'id'
-[2020-04-18 00:00:05,629]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "POST", "code": "500 INTERNAL SERVER ERROR", "uri": "/rent/1?", "request": {"user_id": 1, "book_id": 1}, "response": {"message": "Internal Server Error"}}
-[2020-04-18 00:00:10,501]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:60} WARNING - REQUEST_LOG	{"method": "POST", "code": "200 OK", "uri": "/rent?", "request": {"user_id": 1, "book_id": 1}, "response": {"id": 2, "book_id": 1, "user_id": "1", "return_date": "Sat, 18 Apr 2020 00:00:10 -0000", "created_at": "Sat, 18 Apr 2020 00:00:10 -0000", "updated_at": null, "deleted_at": null}}
-[2020-04-18 00:00:36,194]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:60} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/rent/1?", "request": {"user_id": 1, "book_id": 1}, "response": {"id": 1, "book_id": 6, "user_id": "8", "return_date": "Fri, 17 Apr 2020 23:27:39 -0000", "created_at": "Fri, 17 Apr 2020 23:27:39 -0000", "updated_at": null, "deleted_at": null}}
-[2020-04-18 00:02:06,014]{/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /rent/1 [GET]
-Traceback (most recent call last):
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/rent/resources.py", line 27, in get
-    return marshal(qry, Rents.response_field), 200
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 636, in marshal
-    return OrderedDict([(envelope, OrderedDict(items))]) if envelope else OrderedDict(items)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 635, in <genexpr>
-    for k, v in fields.items())
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 636, in marshal
-    return OrderedDict([(envelope, OrderedDict(items))]) if envelope else OrderedDict(items)
-  File "/home/andrenovado/Documents/Coding/Alterra/.virtualenvs/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 635, in <genexpr>
-    for k, v in fields.items())
-AttributeError: 'NoneType' object has no attribute 'output'
-[2020-04-18 00:02:06,017]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/rent/1?", "request": {"user_id": 1, "book_id": 1}, "response": {"message": "Internal Server Error"}}
-[2020-04-18 00:05:42,598]{/home/andrenovado/Documents/Coding/Alterra/fullstack5_andre_novado/Restful-API/Flask_routing/blueprints/__init__.py:60} WARNING - REQUEST_LOG	{"method": "GET", "code": "200 OK", "uri": "/rent/1?", "request": {"user_id": 1, "book_id": 1}, "response": {"id": 1, "book_id": 6, "user_id": "8", "return_date": "Fri, 17 Apr 2020 23:27:39 -0000", "created_at": "Fri, 17 Apr 2020 23:27:39 -0000", "updated_at": null, "deleted_at": null}}
+  File "/home/alta14/Documents/Flask_routingbaru/blueprints/rent/resources.py", line 110, in get
+    for row in qry.limit(args['rp']).offset(offset).all():
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3246, in all
+    return list(self)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3430, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1103, in _execute_clauseelement
+    distilled_params,
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/cursors.py", line 170, in execute
+    result = self._query(query)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/cursors.py", line 328, in _query
+    conn.query(q)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 517, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 732, in _read_query_result
+    result.read()
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 1075, in read
+    first_packet = self.connection._read_packet()
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'rent.created_at' in 'field list'")
+[SQL: SELECT rent.id AS rent_id, rent.return_date AS rent_return_date, rent.user_id AS rent_user_id, rent.book_id AS rent_book_id, rent.created_at AS rent_created_at, rent.updated_at AS rent_updated_at 
+FROM rent 
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'param_1': 0, 'param_2': 25}]
+(Background on this error at: http://sqlalche.me/e/2j85)
+[2020-04-18 00:25:14,748]{/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/rent?", "request": {"name": "Ros", "age": 23, "sex": "Female", "client_id": 8}, "response": {"message": "Internal Server Error"}}

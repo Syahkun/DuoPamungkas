@@ -16,7 +16,7 @@ api = Api(bp_resep)
 
 class GetResep(Resource):
     
-    # @internal_required
+    @internal_required
     def get(self, id):
         qry = Users.query.get(id)
         if qry is not None:

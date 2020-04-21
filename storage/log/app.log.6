@@ -1,4 +1,4 @@
-[2020-04-18 00:26:45,059]{/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /rent [GET]
+[2020-04-18 00:29:16,676]{/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /client [GET]
 Traceback (most recent call last):
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
     cursor, statement, parameters, context
@@ -20,7 +20,7 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-pymysql.err.InternalError: (1054, "Unknown column 'rent.created_at' in 'field list'")
+pymysql.err.InternalError: (1054, "Unknown column 'client.deleted_at' in 'field list'")
 
 The above exception was the direct cause of the following exception:
 
@@ -35,7 +35,9 @@ Traceback (most recent call last):
     return self.dispatch_request(*args, **kwargs)
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
     resp = meth(*args, **kwargs)
-  File "/home/alta14/Documents/Flask_routingbaru/blueprints/rent/resources.py", line 110, in get
+  File "/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py", line 28, in wrapper
+    return fn(*args, **kwargs)
+  File "/home/alta14/Documents/Flask_routingbaru/blueprints/client/resources.py", line 53, in get
     for row in qry.limit(args['rp']).offset(offset).all():
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3246, in all
     return list(self)
@@ -75,40 +77,10 @@ Traceback (most recent call last):
     err.raise_mysql_exception(self._data)
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
     raise errorclass(errno, errval)
-sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'rent.created_at' in 'field list'")
-[SQL: SELECT rent.id AS rent_id, rent.return_date AS rent_return_date, rent.user_id AS rent_user_id, rent.book_id AS rent_book_id, rent.created_at AS rent_created_at, rent.updated_at AS rent_updated_at 
-FROM rent 
+sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'client.deleted_at' in 'field list'")
+[SQL: SELECT client.id AS client_id, client.client_key AS client_client_key, client.client_secret AS client_client_secret, client.salt AS client_salt, client.status AS client_status, client.address AS client_address, client.created_at AS client_created_at, client.updated_at AS client_updated_at, client.deleted_at AS client_deleted_at 
+FROM client 
  LIMIT %(param_1)s, %(param_2)s]
 [parameters: {'param_1': 0, 'param_2': 25}]
 (Background on this error at: http://sqlalche.me/e/2j85)
-[2020-04-18 00:26:45,068]{/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/rent?", "request": {"name": "Ros", "age": 23, "sex": "Female", "client_id": 8}, "response": {"message": "Internal Server Error"}}
-[2020-04-18 00:27:01,702]{/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /client [GET]
-Traceback (most recent call last):
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 468, in wrapper
-    resp = resource(*args, **kwargs)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/views.py", line 89, in view
-    return self.dispatch_request(*args, **kwargs)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_restful/__init__.py", line 583, in dispatch_request
-    resp = meth(*args, **kwargs)
-  File "/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py", line 23, in wrapper
-    verify_jwt_in_request()
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 32, in verify_jwt_in_request
-    jwt_data, jwt_header = _decode_jwt_from_request(request_type='access')
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_jwt_extended/view_decorators.py", line 294, in _decode_jwt_from_request
-    decoded_token = decode_token(encoded_token, csrf_token)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_jwt_extended/utils.py", line 118, in decode_token
-    allow_expired=allow_expired
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask_jwt_extended/tokens.py", line 140, in decode_jwt
-    leeway=leeway, options=options, issuer=issuer)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/jwt/api_jwt.py", line 92, in decode
-    jwt, key=key, algorithms=algorithms, options=options, **kwargs
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/jwt/api_jws.py", line 156, in decode
-    key, algorithms)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/jwt/api_jws.py", line 223, in _verify_signature
-    raise InvalidSignatureError('Signature verification failed')
-jwt.exceptions.InvalidSignatureError: Signature verification failed
-[2020-04-18 00:27:01,707]{/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"name": "Ros", "age": 23, "sex": "Female", "client_id": 8}, "response": {"message": "Internal Server Error"}}
+[2020-04-18 00:29:16,689]{/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client?", "request": {"name": "Ros", "age": 23, "sex": "Female", "client_id": 8}, "response": {"message": "Internal Server Error"}}
