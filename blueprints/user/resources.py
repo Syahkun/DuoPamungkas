@@ -15,23 +15,26 @@ class UserResource(Resource):
     def __init__(self):
         pass
     
-    @internal_required
+    # @internal_required
     def get(self, id):
         qry = Users.query.get(id)
         if qry is not None:
             return marshal(qry, Users.response_fields), 200
         return {'status': 'NOT_FOUND'}, 404
     
-    @internal_required
+    # @internal_required
     def post(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('client_id', location='json')
-        parser.add_argument('name', location='json', required=True)
-        parser.add_argument('age', location='json')
-        parser.add_argument('sex', location='json')
+        parser.add_argument('name', location='json')
+        parser.add_argument('age', location='json', required=True)
+        parser.add_argument('sex', location='json', required=True)
+        parser.add_argument('weight', location='json', required=True)
+        parser.add_argument('height', location='json', required=True)
+        parser.add_argument('food', location='json', required=True)
+
         args = parser.parse_args()
 
-        user = Users(args['client_id'], args['name'], args['age'], args['sex'])
+        user = Users(args['name'], args['age'], args['sex'], args['weight'], args['height'], args['food'])
         db.session.add(user)
         db.session.commit()
         
@@ -39,12 +42,15 @@ class UserResource(Resource):
 
         return marshal(user, Users.response_fields), 200, {'Content-Type': 'application/json'}
     
-    @internal_required
+    # @internal_required
     def put(self, id):
         parser = reqparse.RequestParser()
-        parser.add_argument('name', location='json', required=True)
-        parser.add_argument('age', location='json', type=int)
+        parser.add_argument('name', location='json')
+        parser.add_argument('age', location='json')
         parser.add_argument('sex', location='json')
+        parser.add_argument('weight', location='json')
+        parser.add_argument('height', location='json')
+        parser.add_argument('food', location='json')
         data = parser.parse_args()
         
         qry = Users.query.get(id)
@@ -54,11 +60,15 @@ class UserResource(Resource):
         qry.name = data['name']
         qry.age = data['age']
         qry.sex = data['sex']
+        qry.weight = data['weight']
+        qry.height = data['height']
+        qry.food = data['food']
+
         db.session.commit()
         
         return marshal(qry, Users.response_fields), 200, {'Content-Type': 'application/json'}
     
-    @internal_required
+    # @internal_required
     def delete(self, id):
         qry = Users.query.get(id)
         if qry is None:
@@ -74,7 +84,7 @@ class UserList(Resource):
     def __init__(self):
         pass
     
-    @internal_required
+    # @internal_required
     def get(self):
         parser = reqparse.RequestParser()
         parser.add_argument('p', type=int, location='args', default=1)

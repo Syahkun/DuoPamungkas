@@ -15,26 +15,34 @@ Base = declarative_base()
 class Users(db.Model):
     __tablename__= "users"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    name = db.Column(db.String(50), nullable=False)
-    age = db.Column(db.Integer, nullable=True, default=0)
-    sex = db.Column(db.String(50), nullable=True)
     client_id = db.Column(db.Integer, db.ForeignKey('clients.id'))
-    
+    name = db.Column(db.String(50), nullable=False)
+    age = db.Column(db.Integer, nullable=False)
+    sex = db.Column(db.String(50), nullable=False)
+    weight = db.Column(db.Integer, nullable=False)
+    height = db.Column(db.Integer, nullable=False)
+    food = db.Column(db.String(100), default="donut")
     
     response_fields = {
         'id': fields.Integer,
         'client_id': fields.Integer,
         'name': fields.String,
         'age':fields.Integer,
-        'sex': fields.String
+        'sex': fields.String,
+        'weight': fields.Integer,
+        'height': fields.Integer,
+        'food': fields.String
     }
 
-    def __init__(self, client_id, name, age, sex):
+    def __init__(self, name, age, sex, weight, height, food, client_id=2):
         self.client_id = client_id
         self.name = name
         self.age = age
         self.sex = sex
-        
+        self.weight = weight
+        self.height = height
+        self.food = food
+
     def __repr__(self):
         return '<User %r>' % self.id
     
