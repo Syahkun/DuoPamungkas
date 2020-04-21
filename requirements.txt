@@ -6,3 +6,7 @@ flask-migrate
 flask-script
 flask-jwt-extended
 requests
+pytest
+simplecache
+pytest-cov
+werkzeug==0.16.0

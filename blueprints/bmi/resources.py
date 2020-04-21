@@ -4,6 +4,7 @@ from flask_restful import Api, reqparse, Resource
 import json
 from blueprints import app
 from ..user.model import Users
+from blueprints import internal_required
 
 import configparser
 
@@ -15,7 +16,7 @@ api = Api(bp_bmi)
 
 class GetBmi(Resource):
     
-    # @internal_required
+    @internal_required
     def get(self, id):
         qry = Users.query.get(id)
         if qry is not None:

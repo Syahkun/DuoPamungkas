@@ -25,7 +25,7 @@ class CreateTokenResource(Resource):
             hash_pass = hashlib.sha512(encoded).hexdigest()
             
             if hash_pass == qry.client_secret:
-                qry = marshal(qry, Clients.jwt_claim_fields)
+                qry = marshal(qry, Clients.jwt_claims_fields)
                 if args['client_key'] == 'internal' and args['client_secret'] == 'th1s1s1nt3n4lcl13nt':
                     qry = {
                         'identifier': 'alta batch 5',

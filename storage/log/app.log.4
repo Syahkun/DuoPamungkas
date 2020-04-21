@@ -1,4 +1,4 @@
-[2020-04-18 00:29:22,605]{/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /client/list [GET]
+[2020-04-18 00:29:28,216]{/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/flask/app.py:1892} ERROR - Exception on /client/ [GET]
 Traceback (most recent call last):
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
     cursor, statement, parameters, context
@@ -37,18 +37,10 @@ Traceback (most recent call last):
     resp = meth(*args, **kwargs)
   File "/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py", line 28, in wrapper
     return fn(*args, **kwargs)
-  File "/home/alta14/Documents/Flask_routingbaru/blueprints/client/resources.py", line 87, in get
-    qry = Clients.query.get(id)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1004, in get
-    return self._get_impl(ident, loading.load_on_pk_identity)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1121, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/loading.py", line 287, in load_on_pk_identity
-    return q.one()
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3360, in one
-    ret = self.one_or_none()
-  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3329, in one_or_none
-    ret = list(self)
+  File "/home/alta14/Documents/Flask_routingbaru/blueprints/client/resources.py", line 53, in get
+    for row in qry.limit(args['rp']).offset(offset).all():
+  File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3246, in all
+    return list(self)
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3405, in __iter__
     return self._execute_and_instances(context)
   File "/home/alta14/VirtualEnv/rest_training/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3430, in _execute_and_instances
@@ -88,7 +80,7 @@ Traceback (most recent call last):
 sqlalchemy.exc.InternalError: (pymysql.err.InternalError) (1054, "Unknown column 'client.deleted_at' in 'field list'")
 [SQL: SELECT client.id AS client_id, client.client_key AS client_client_key, client.client_secret AS client_client_secret, client.salt AS client_salt, client.status AS client_status, client.address AS client_address, client.created_at AS client_created_at, client.updated_at AS client_updated_at, client.deleted_at AS client_deleted_at 
 FROM client 
-WHERE client.id = %(param_1)s]
-[parameters: {'param_1': 'list'}]
+ LIMIT %(param_1)s, %(param_2)s]
+[parameters: {'param_1': 0, 'param_2': 25}]
 (Background on this error at: http://sqlalche.me/e/2j85)
-[2020-04-18 00:29:22,609]{/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client/list?", "request": {"name": "Ros", "age": 23, "sex": "Female", "client_id": 8}, "response": {"message": "Internal Server Error"}}
+[2020-04-18 00:29:28,218]{/home/alta14/Documents/Flask_routingbaru/blueprints/__init__.py:70} ERROR - REQUEST_LOG	{"method": "GET", "code": "500 INTERNAL SERVER ERROR", "uri": "/client/?", "request": {"name": "Ros", "age": 23, "sex": "Female", "client_id": 8}, "response": {"message": "Internal Server Error"}}
