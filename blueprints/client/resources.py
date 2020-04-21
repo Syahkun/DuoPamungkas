@@ -16,14 +16,14 @@ class ClientResource(Resource):
     def __init__(self):
         pass
     
-    @internal_required
+    # @internal_required
     def get(self, id):
         qry = Clients.query.get(id)
         if qry is not None:
             return marshal(qry, Clients.response_fields), 200
         return {'status': 'NOT_FOUND'}, 404
     
-    @internal_required
+    # @internal_required
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('client_key', location='json', required=True)
@@ -42,7 +42,7 @@ class ClientResource(Resource):
 
         return marshal(result, Clients.response_fields), 200, {'Content-Type': 'application/json'}
     
-    @internal_required
+    # @internal_required
     def put(self, id):
         parser = reqparse.RequestParser()
         parser.add_argument('client_key', location='json', required=True)
@@ -64,7 +64,7 @@ class ClientResource(Resource):
         
         return marshal(qry, Clients.response_fields), 200, {'Content-Type': 'application/json'}
     
-    @internal_required
+    # @internal_required
     def delete(self, id):
         qry = Clients.query.get(id)
         if qry is None:
@@ -75,16 +75,16 @@ class ClientResource(Resource):
         
         return {'status': 'DELETED'}, 200
     
-    @internal_required
+    # @internal_required
     def patch(self):
         return 'Not yet implemented', 501
 
 class ClientList(Resource):
-    @internal_required
+    # @internal_required
     def __init__(self):
         pass
     
-    @internal_required
+    # @internal_required
     def get(self):        # parser.add_argument('client_name', location='json', required=True)ocation='args', default=1)
         parser = reqparse.RequestParser()
         parser.add_argument('p', type=int, location='args', default=1)
