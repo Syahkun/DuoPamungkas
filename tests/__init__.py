@@ -4,9 +4,6 @@ from app import cache, logging
 from flask import Flask, request, json
 from blueprints.client.resources import Clients
 from blueprints.user.resources import Users
-
-
-
 from blueprints import db
 import hashlib, uuid
 

@@ -54,6 +54,7 @@ class ClientResource(Resource):
         if qry is None:
             return {'status': 'NOT_FOUND'}, 404
         
+        salt = uuid.uuid4().hex
         encoded = ('%s%s' % (data['client_secret'], salt)).encode('utf-8')
         hash_pass = hashlib.sha512(encoded).hexdigest()
         
@@ -75,10 +76,6 @@ class ClientResource(Resource):
         
         return {'status': 'DELETED'}, 200
     
-    @internal_required
-    def patch(self):
-        return 'Not yet implemented', 501
-
 class ClientList(Resource):
     @internal_required
     def __init__(self):

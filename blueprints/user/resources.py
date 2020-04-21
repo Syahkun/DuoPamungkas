@@ -123,5 +123,5 @@ class UserList(Resource):
             
         return rows, 200
 
-api.add_resource(UserList, '', '/list')    
+api.add_resource(UserList, '', '')    
 api.add_resource(UserResource, '', '/<id>')

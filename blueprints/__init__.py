@@ -1,8 +1,6 @@
 import json, config, os
-
 from datetime import timedelta
 from functools import wraps
-
 from flask import Flask, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate, MigrateCommand
@@ -10,8 +8,6 @@ from flask_script import Manager
 from flask_jwt_extended import JWTManager, verify_jwt_in_request, get_jwt_claims
 
 app = Flask(__name__)
-
-
 jwt = JWTManager(app)
 
 def internal_required(fn):
@@ -30,13 +26,10 @@ if os.environ.get('FLASK_ENV', 'Production') == "Production" :
 else:
     app.config.from_object(config.DevelopmentConfig)
 
-
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 manager = Manager(app)
 manager.add_command('db', MigrateCommand)
-
-
 
 @app.after_request
 def after_request(response):
