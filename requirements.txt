@@ -9,4 +9,4 @@ requests
 pytest
 simplecache
 pytest-cov
-werkzeug==0.16.0
+werkzeug==2.2.3
